@@ -7,7 +7,7 @@
 body {
   margin: 0;
   font-family: 'Merriweather', Georgia, serif;
-  background: url("pict/light.jpg") center / cover no-repeat fixed;
+  background: url("light.jpg") center / cover no-repeat fixed;
   color: #222;
   transition: 
     background 0.5s ease,
@@ -17,7 +17,7 @@ body {
 
 /* DARK MODE */
 body.dark {
-  background: url("pict/dark.jpg") center / cover no-repeat fixed;
+  background: url("dark.jpg") center / cover no-repeat fixed;
   color: #e6e6e6;
 }
 
@@ -221,4 +221,5 @@ body.dark .dark-btn {
   background: #333;
   color: #fff;
   transform: rotate(180deg);
+
 }
