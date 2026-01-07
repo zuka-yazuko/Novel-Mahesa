@@ -1,0 +1,224 @@
+/* RESET */
+* {
+  box-sizing: border-box;
+}
+
+/* BODY */
+body {
+  margin: 0;
+  font-family: 'Merriweather', Georgia, serif;
+  background: url("pict/light.jpg") center / cover no-repeat fixed;
+  color: #222;
+  transition: 
+    background 0.5s ease,
+    color 0.4s ease,
+    opacity 0.3s ease;
+}
+
+/* DARK MODE */
+body.dark {
+  background: url("pict/dark.jpg") center / cover no-repeat fixed;
+  color: #e6e6e6;
+}
+
+/* PAGE FADE */
+body.fade-out {
+  opacity: 0;
+}
+
+/* CONTAINER */
+.container {
+  max-width: 720px;
+  margin: auto;
+  padding: 70px 20px;
+  animation: pageIn 0.5s ease forwards;
+}
+
+/* PAGE ANIMATION */
+@keyframes pageIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* COVER */
+.cover-frame {
+  max-width: 360px;
+  margin: 0 auto 40px;
+  padding: 12px;
+  background: rgba(0,0,0,0.65);
+  border-radius: 18px;
+  box-shadow: 0 25px 45px rgba(0,0,0,0.3);
+  transition: background 0.4s ease;
+}
+
+.cover-image {
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  object-fit: contain;
+  border-radius: 12px;
+  background: #000;
+}
+
+/* WRAPPER JUDUL */
+.wrapper-bab {
+  text-align: center;
+  background: rgba(0,0,0,0.85);
+  padding: 30px;
+  border-radius: 16px;
+  transition: background 0.4s ease;
+}
+
+body.dark .wrapper-bab {
+  background: #1e1e1e;
+}
+
+.wrapper-bab h1 {
+  margin: 0;
+  font-size: 32px;
+  color: #f0e6d2;
+}
+
+.subtitle {
+  margin-top: 8px;
+  font-size: 15px;
+  color: #ccc;
+}
+
+/* CHAPTER LIST */
+.chapter-heading {
+  text-align: center;
+  font-size: 24px;
+  margin-top: 40px;
+  font-weight: 600;
+  color: #ccc;
+}
+
+.chapter-list {
+  list-style: none;
+  padding: 0;
+  margin: 24px 0 0;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 14px;
+}
+
+.chapter-list li a {
+  display: block;
+  padding: 12px 0;
+  text-align: center;
+
+  background: #1e1e1e;
+  color: #eaeaea;
+  text-decoration: none;
+  border-radius: 10px;
+
+  font-weight: 500;
+  transition: 0.2s ease;
+}
+
+.chapter-list li a:hover {
+  background: #7ea1be;
+  transform: translateY(-2px);
+}
+
+.dark .chapter-list li a:hover {
+  background: #245a86;
+  transform: translateY(-2px);
+}
+
+/* Epilog beda dikit biar kerasa penutup */
+.chapter-list .epilog a {
+  background: #2b2b2b;
+  font-weight: 600;
+}
+
+
+/* READER */
+.reader {
+  max-width: 620px;
+  margin: 60px auto;
+  padding: 50px 28px;
+  font-size: 18px;
+  line-height: 1.9;
+  background: rgba(236, 224, 188, 0.92);
+  border-radius: 14px;
+}
+
+body.dark .reader {
+  background: #1e1e1e;
+}
+
+.reader p {
+  margin: 0 0 1.4em;
+  text-indent: 1.5em;
+}
+
+.reader p.no-indent,
+.reader p.dialog {
+  text-indent: 0;
+}
+
+.reader p.dialog {
+  padding-left: 0.5em;
+}
+
+/* TEXT ANIMATION */
+.reader p {
+  animation: textFade 0.6s ease forwards;
+}
+
+@keyframes textFade {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* NAV */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 60px;
+  font-size: 14px;
+}
+
+.nav a {
+  color: inherit;
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+.nav a:hover {
+  opacity: 1;
+}
+
+/* DARK BUTTON */
+.dark-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  background: rgba(255,255,255,0.85);
+  transition: transform 0.4s ease, background 0.3s ease;
+}
+
+body.dark .dark-btn {
+  background: #333;
+  color: #fff;
+  transform: rotate(180deg);
+}
